@@ -9,4 +9,5 @@ Add this to your emacs configuration:
   :load-path "<git clone of the project>")
 
 (add-to-list 'magic-mode-alist '("@version: " . syslogngconf-mode))
+(add-to-list 'auto-mode-alist '("/scl/.*\\.conf\\'" . syslogngconf-mode))
 #+END_SRC
