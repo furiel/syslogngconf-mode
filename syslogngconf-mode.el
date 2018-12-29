@@ -28,8 +28,8 @@
            (syslogngconf-prepare-keywordlist-for-optimization
             '(
               "source" "filter" "parser" "rewrite" "destination" "log"
-              "junction" "channel" "options" "include" "block" "if"
-              "else" "elif" "version" "module" "define" "requires"))
+              "junction" "channel" "options" "@include" "block" "if"
+              "else" "elif" "@version" "@module" "@define" "@requires"))
             t)
           "\\>"))
 
@@ -168,6 +168,7 @@
   (let ((st (make-syntax-table)))
     (modify-syntax-entry ?_ "w" st)
     (modify-syntax-entry ?- "w" st)
+    (modify-syntax-entry ?@ "w" st)
     (modify-syntax-entry ?# "<" st)
     (modify-syntax-entry ?\n ">" st)
     st)
