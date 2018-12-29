@@ -38,8 +38,23 @@
           (regexp-opt
            (syslogngconf-prepare-keywordlist-for-optimization
             '(
-              "internal" "yes" "on" "no" "off" "chars" "strings" "null"
-              ))
+              "internal" "yes" "on" "no" "off" "chars" "strings"
+              "null" "global" "icase" "ignore_case" "newline"
+              "unicode" "utf8" "store_matches" "substring" "prefix"
+              "kernel" "empty_lines" "threaded" "no_parse"
+              "check_hostname" "syslog_protocol" "assume_utf8"
+              "validate_utf8" "sanitize_utf8" "no_multi_line"
+              "store_legacy_msghdr" "store_raw_message"
+              "dont_store_legacy_msghdr" "expect_hostname"
+              "no_hostname" "nv_pairs" "dot_nv_pairs" "all_nv_pairs"
+              "rfc3164" "core" "base" "rfc5424" "syslog_proto"
+              "all_macros" "selected_macros" "sdata" "everything"
+              "catch_all" "fallback" "final" "flow_control" "drop_unmatched"
+              "syslog_protocol" "no_multi_line" "threaded" "ignore_errors"
+              "explicit_commits" "dont_create_tables"
+              "escape_none" "escape_backslash" "escape_double_char"
+              "strip_whitespace" "greedy" "drop_invalid" "pcre" "string"
+              "glob"))
            t)
           "\\>"))
 
