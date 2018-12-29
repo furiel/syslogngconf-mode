@@ -119,7 +119,25 @@
               "description" "metric" "ttl" "attributes" "cacert" "cert"
               "set_message_macro" "syslog_parser" "max_field_size"
               "tags_parser" "drop_invalid" "exclude_tags"
-              "strip_whitespaces" "freq" "bytes"))
+              "strip_whitespaces" "freq" "bytes" "udp-port" "tcp-port"
+              "rfc5424-tls-port" "rfc5424-tcp-port" "index"
+              "flush_limit" "client_mode" "cluster" "custom_id"
+              "resource" "client_lib_dir" "concurrent_requests"
+              "skip_cluster_health_check" "cluster_url"
+              "java_keystore_filepath" "java_keystore_password"
+              "java_truststore_filepath" "java_truststore_password"
+              "java_ssl_insecure" "http_auth_type"
+              "http_auth_type_basic_username"
+              "http_auth_type_basic_password" "payload"
+              "hdfs_uri" "hdfs_file" "hdfs_archive_dir"
+              "hdfs_resources" "hdfs_max_filename_length"
+              "kerberos_principal" "kerberos_keytab_file"
+              "hdfs_append_enabled" "topic" "kafka_bootstrap_servers"
+              "properties_file" "sync_send" "filename" "token" "tag"
+              "hook-url" "fallback" "colors" "color-chooser" "pretext"
+              "author-name" "author-link" "author-icon" "title"
+              "title-link" "image-url" "thumb-url" "footer" "footer-icon"
+              "bot-id" "chat-id" "parse-mode" "disable-web-page-preview"))
             t)
            "\\>"))
 
