@@ -185,7 +185,17 @@
               "osquery" "mbox" "credit-card-hash" "credit-card-mask"
               "pacct" "snmptrap" "extract-solaris-msgid" "sudo-parser"
               "windows-eventlog-parser" "system" "telegram" "slack"
-              "linux-audit"))
+              "linux-audit" "grep" "context-lookup" "context-length"
+              "context-values" "echo" "length" "substr" "strip"
+              "sanitize" "lowercase" "uppercase" "replace-delimiter"
+              "padding" "binary" "dirname" "basename" "list-concat"
+              "list-head" "list-nth" "list-tail" "list-slice"
+              "list-count" "list-append" "+" "-" "*" "/" "%" "sum"
+              "min" "max" "average" "ipv4-to-int" "indent-multi-line"
+              "env" "url-encode" "url-decode" "base64-encode"
+              "format-cef-extension" "uuid" "hash" "sha1" "sha256"
+              "sha512" "md4" "md5" "getent" "graphite_output"
+              "format_json" "format-welf" "stardate"))
             t)
           "\\>"))
 
