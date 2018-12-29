@@ -205,6 +205,7 @@
    `(,syslogngconf-keywords-regexp-consts-optimized . font-lock-constant-face)
    `(,syslogngconf-keywords-regexp-options-optimized . font-lock-type-face)
    `(,syslogngconf-keywords-regexp-functions-optimized . font-lock-function-name-face)
+   '("\\<$\\w+\\>" . font-lock-variable-name-face)
   "Default syntax highlighting expressions for syslogngconf mode"))
 
 (defvar syslogngconf-mode-syntax-table
