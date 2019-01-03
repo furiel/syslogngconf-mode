@@ -2,12 +2,18 @@
 Major mode for editing syslog-ng configuration files with emacs
 
 * Installation
+Prepared packages available at:
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'package-archives
+	     '("bagolyodu" . "https://bagolyodu.dyndns.hu/emacs-packages/") t)
+#+END_SRC
+
 Add this to your emacs configuration:
 
 #+BEGIN_SRC emacs-lisp
-(use-package syslogngconf-mode
-  :load-path "<git clone of the project>")
+  (use-package syslogngconf-mode :ensure t)
 
-(add-to-list 'magic-mode-alist '("@version: " . syslogngconf-mode))
-(add-to-list 'auto-mode-alist '("/scl/.*\\.conf\\'" . syslogngconf-mode))
+  (add-to-list 'magic-mode-alist '("@version: " . syslogngconf-mode))
+  (add-to-list 'auto-mode-alist '("/scl/.*\\.conf\\'" . syslogngconf-mode))
 #+END_SRC
