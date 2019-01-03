@@ -1,3 +1,5 @@
+;;; syslogng-mode.el --- minor mode for controlling syslog-ng
+
 (defconst syslogng-buffer-name "*syslogng*"
   "default buffer name for syslogng buffer")
 
@@ -103,3 +105,5 @@
     (syslogng-autodetect-binary)))
 
 (provide 'syslogng-mode)
+
+;;; syslogng-mode.el ends here

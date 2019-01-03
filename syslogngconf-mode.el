@@ -1,13 +1,5 @@
 ;;; syslogngconf-mode.el --- major mode for editing syslog-ng configuration file
 
-;; Author: Antal Nemes
-;; Version: 0.0.1
-;; Package-version: 20181229
-
-;;; Commentary:
-
-;;; Code:
-
 (require 'syslogng-mode)
 
 (defvar syslogngconf-mode-hook nil)
