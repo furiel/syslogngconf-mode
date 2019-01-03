@@ -12,8 +12,8 @@ Prepared packages available at:
 Add this to your emacs configuration:
 
 #+BEGIN_SRC emacs-lisp
-  (use-package syslogngconf-mode :ensure t)
-
-  (add-to-list 'magic-mode-alist '("@version: " . syslogngconf-mode))
-  (add-to-list 'auto-mode-alist '("/scl/.*\\.conf\\'" . syslogngconf-mode))
+  (use-package syslogngconf-mode
+    :magic (("@version: " . syslogngconf-mode))
+    :mode (("/scl/.*\\.conf\\'" . syslogngconf-mode))
+    :ensure t)
 #+END_SRC
