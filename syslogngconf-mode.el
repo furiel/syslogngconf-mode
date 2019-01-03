@@ -8,6 +8,8 @@
 
 ;;; Code:
 
+(require 'syslogng-mode)
+
 (defvar syslogngconf-mode-hook nil)
 
 (defconst syslogngconf-keywords-builtins
@@ -237,7 +239,8 @@
   (use-local-map syslogngconf-mode-map)
   (setq-local comment-start "# ")
   (setq-local comment-start-skip "#+\\s-*")
-  (setq-local font-lock-defaults '(syslogngconf-font-lock-keywords)))
+  (setq-local font-lock-defaults '(syslogngconf-font-lock-keywords))
+  (syslogng-mode))
 
 (provide 'syslogngconf-mode)
 
