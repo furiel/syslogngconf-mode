@@ -46,7 +46,8 @@
   (setq syslogng-buffer
         (generate-new-buffer syslogng-buffer-name))
   (with-current-buffer syslogng-buffer
-    (read-only-mode))
+    (read-only-mode)
+    (local-set-key (kbd "q") 'delete-window))
 
   syslogng-buffer)
 
