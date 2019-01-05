@@ -6,11 +6,8 @@
 (defvar syslogng-buffer nil
   "default buffer for syslogng")
 
-(defvar syslogng-root "/opt/syslogng"
+(defvar syslogng-root nil
   "path of the syslogng installation")
-
-(defvar syslogng-autodetect-binary-p t
-  "try to automatically find syslogng root")
 
 (defvar syslogng-mode-modemap-prefix "C-c"
   "prefix of syslogng minor mode keys")
@@ -101,7 +98,7 @@
             (,(kbd (concat syslogng-mode-modemap-prefix " s R")) . syslogng-restart)
             (,(kbd (concat syslogng-mode-modemap-prefix " s r")) . syslogng-reload))
 
-  (when syslogng-autodetect-binary-p
+  (unless syslogng-root
     (syslogng-autodetect-binary)))
 
 (provide 'syslogng-mode)
