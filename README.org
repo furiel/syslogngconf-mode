@@ -17,3 +17,7 @@ Add this to your emacs configuration:
     :mode (("/scl/.*\\.conf\\'" . syslogngconf-mode))
     :ensure t)
 #+END_SRC
+
+* Images
+
+[[file:media/spotlight.gif]]
