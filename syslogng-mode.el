@@ -12,7 +12,7 @@
 (defvar syslogng-config nil
   "syslog-ng configuration file")
 
-(defvar syslogng-mode-modemap-prefix "C-c"
+(defvar syslogng-mode-modemap-prefix "C-c s"
   "prefix of syslogng minor mode keys")
 
 (defun syslogng-autodetect-root ()
@@ -99,10 +99,10 @@
 (define-minor-mode syslogng-mode
   "control syslogng from buffer"
   :lighter "syslogng"
-  :keymap `((,(kbd (concat syslogng-mode-modemap-prefix " s s")) . syslogng-start)
-            (,(kbd (concat syslogng-mode-modemap-prefix " s S")) . syslogng-stop)
-            (,(kbd (concat syslogng-mode-modemap-prefix " s R")) . syslogng-restart)
-            (,(kbd (concat syslogng-mode-modemap-prefix " s r")) . syslogng-reload))
+  :keymap `((,(kbd (concat syslogng-mode-modemap-prefix " s")) . syslogng-start)
+            (,(kbd (concat syslogng-mode-modemap-prefix " S")) . syslogng-stop)
+            (,(kbd (concat syslogng-mode-modemap-prefix " R")) . syslogng-restart)
+            (,(kbd (concat syslogng-mode-modemap-prefix " r")) . syslogng-reload))
 
   (unless syslogng-root
     (syslogng-autodetect-root))

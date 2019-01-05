@@ -18,6 +18,21 @@ Add this to your emacs configuration:
     :ensure t)
 #+END_SRC
 
+* Usage
+
+The default keymap prefix is "C-c s", which can be overridden with
+syslogng-mode-modemap-prefix.
+
+Default keybindings:
+
+| keybinding | command          |
+|------------+------------------|
+| C-c s s    | syslogng-start   |
+| C-c s S    | syslogng-stop    |
+| C-c s R    | syslogng-restart |
+| C-c s r    | syslogng-reload  |
+
+
 * Images
 
 [[file:media/spotlight.gif]]
