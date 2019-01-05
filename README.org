@@ -18,6 +18,8 @@ Add this to your emacs configuration:
     :ensure t)
 #+END_SRC
 
+For flycheck support please check [[https://github.com/furiel/flycheck-syslogngconf][flycheck-syslogngconf]].
+
 * Usage
 
 The default keymap prefix is "C-c s", which can be overridden with
