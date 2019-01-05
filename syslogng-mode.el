@@ -71,17 +71,21 @@
 
   (display-buffer syslogng-buffer))
 
-(defmacro define-ctl-command (cmd)
-  `(defun ,(intern (concat "syslogng-" (symbol-name cmd))) ()
-     (interactive)
-     (let* ((ctl (concat (file-name-as-directory syslogng-root)
-                        "/sbin/syslog-ng-ctl"))
-            (cmd (format "%s %s" ctl ,(symbol-name cmd))))
-       (message cmd)
-       (shell-command cmd))))
+(defun syslogng-stop ()
+  (interactive)
+  (let* ((ctl (concat (file-name-as-directory syslogng-root)
+                      "/sbin/syslog-ng-ctl"))
+         (cmd (format "%s %s" ctl "stop")))
+    (message cmd)
+    (shell-command cmd)))
 
-(define-ctl-command stop)
-(define-ctl-command reload)
+(defun syslogng-reload ()
+  (interactive)
+  (let* ((ctl (concat (file-name-as-directory syslogng-root)
+                      "/sbin/syslog-ng-ctl")))
+    (let ((proc
+           (start-file-process "syslogng-ctl" nil ctl "reload")))
+      (set-process-filter proc (lambda (proc line) (message line))))))
 
 (defun syslogng-restart ()
   "restart syslogng in a buffer"
