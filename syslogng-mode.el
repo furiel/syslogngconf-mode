@@ -15,7 +15,7 @@
 (defvar syslogng-mode-modemap-prefix "C-c"
   "prefix of syslogng minor mode keys")
 
-(defun syslogng-autodetect-binary ()
+(defun syslogng-autodetect-root ()
   (let ((root-candidates `(,(concat (file-name-directory buffer-file-name) "../")
                            "/" "/usr/" "/opt/")))
     (flet ((probe-root-dir (dir)
@@ -100,7 +100,7 @@
             (,(kbd (concat syslogng-mode-modemap-prefix " s r")) . syslogng-reload))
 
   (unless syslogng-root
-    (syslogng-autodetect-binary))
+    (syslogng-autodetect-root))
   (unless syslogng-config
     (if (string-equal major-mode "syslogngconf-mode")
         (set-variable 'syslogng-config buffer-file-name)
