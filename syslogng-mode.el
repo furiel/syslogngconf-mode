@@ -9,6 +9,9 @@
 (defvar syslogng-root nil
   "path of the syslogng installation")
 
+(defvar syslogng-config nil
+  "syslog-ng configuration file")
+
 (defvar syslogng-mode-modemap-prefix "C-c"
   "prefix of syslogng minor mode keys")
 
@@ -27,15 +30,13 @@
       ((binary
         (concat (file-name-as-directory syslogng-root)
                 "/sbin/syslog-ng"))
-       (conf-file
-        (concat (file-name-as-directory syslogng-root)
-                "/etc/stdin_test.conf")))
+       (conf-file syslogng-config))
 
-       (start-process syslogng-buffer-name syslogng-buffer
-                      binary
-                      "-Fevd"
-                      "-f"
-                      conf-file)))
+    (start-process syslogng-buffer-name syslogng-buffer
+                   binary
+                   "-Fevd"
+                   "-f"
+                   conf-file)))
 
 (defun syslogng-create-buffer ()
   "create syslog-ng buffer"
@@ -99,7 +100,13 @@
             (,(kbd (concat syslogng-mode-modemap-prefix " s r")) . syslogng-reload))
 
   (unless syslogng-root
-    (syslogng-autodetect-binary)))
+    (syslogng-autodetect-binary))
+  (unless syslogng-config
+    (if (string-equal major-mode "syslogngconf-mode")
+        (set-variable 'syslogng-config buffer-file-name)
+      (set-variable
+       'syslogng-config
+       (read-file-name "Please select syslog-ng configuration file")))))
 
 (provide 'syslogng-mode)
 
